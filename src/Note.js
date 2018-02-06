@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// custom icons
 import FaPencil from 'react-icons/lib/fa/pencil'
 import FaTrash from 'react-icons/lib/fa/trash'
 import FaFloppyO from 'react-icons/lib/fa/floppy-o'
@@ -6,9 +7,11 @@ import FaFloppyO from 'react-icons/lib/fa/floppy-o'
 class Note extends Component {
 	constructor(props) {
 		super(props)
+		// default editing state
 		this.state = {
 			editing: false
 		}
+		// bind attaches the methods to the class prototype
 		this.edit = this.edit.bind(this)
 		this.remove = this.remove.bind(this)
 		this.save = this.save.bind(this)
@@ -45,6 +48,9 @@ class Note extends Component {
 		)
 	}
 
+
+	// Button events
+	// when clicked, editing becomes true
 	edit() {
 		this.setState({
 			editing: true
@@ -63,6 +69,8 @@ class Note extends Component {
 		})
 	}
 
+
+ // The Note form and display states will show based on editing state
 	renderForm() {
 		return (
 			<div className="note" style={this.style}>
