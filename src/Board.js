@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import Note from './Note'
 import FaPlus from 'react-icons/lib/fa/plus'
 
+
+// Parent component that will render the Note component
+// state is an array of notes that will be added to board
 class Board extends Component {
 	constructor(props) {
 		super(props)
@@ -59,6 +62,8 @@ class Board extends Component {
 		}))
 	}
 
+  // method to render a note based on each item in state
+	// note.note = the display text
 	eachNote(note, i) {
 		return (
 			<Note key={note.id}
@@ -70,6 +75,7 @@ class Board extends Component {
 		)
 	}
 
+  // map over all of the notes that are in state
 	render() {
 		return (
 			<div className="board">

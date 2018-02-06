@@ -71,6 +71,7 @@ class Note extends Component {
 
 
  // The Note form and display states will show based on editing state
+ // ref is used to capture what the user enters, sort of like an ID
 	renderForm() {
 		return (
 			<div className="note" style={this.style}>
@@ -82,7 +83,7 @@ class Note extends Component {
 			</div>
 		)
 	}
-
+  // this.props.children will display whatever the value of note.note is 
 	renderDisplay() {
 		return (
 			<div className="note" style={this.style}>
