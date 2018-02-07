@@ -28,6 +28,9 @@ class Board extends Component {
 		this.nextId = this.nextId.bind(this)
 	}
 
+// Invoked immediately before the initial rendering occurs
+// Load notes into state using fetch
+// take in a sentence from the api endpoint and take the first 10 characters
 	componentWillMount() {
 		var self = this
 		if(this.props.count) {
@@ -35,7 +38,7 @@ class Board extends Component {
 				.then(response => response.json())
 				.then(json => json[0]
 								.split('. ')
-								.forEach(sentence => self.add(sentence.substring(0, 15))))
+								.forEach(sentence => self.add(sentence.substring(0, 10))))
 		}
 	}
 

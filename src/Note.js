@@ -28,10 +28,13 @@ class Note extends Component {
 		}
 	}
 
+  // Place notes randomly on the screen
+	// takes in x and y values, and s is for a unit of measure
 	randomBetween(x, y, s) {
 		return x + Math.ceil(Math.random() * (y-x)) + s
 	}
 
+  // highlight text when updating, use our ref for textArea
 	componentDidUpdate() {
 		var textArea
 		if(this.state.editing) {
@@ -42,6 +45,8 @@ class Note extends Component {
 
 	}
 
+  // this will check to be sure that something HAS been changed
+	// then re-render
 	shouldComponentUpdate(nextProps, nextState) {
 		return (
 			this.props.children !== nextProps.children || this.state !== nextState
