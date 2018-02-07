@@ -57,10 +57,15 @@ class Note extends Component {
 		})
 	}
 
+ // works in concert with remove in the parent (Board.js)
 	remove() {
 		this.props.onRemove(this.props.index)
 	}
 
+	// Used in renderForm
+	// onChange refers to update (from eachNote method in Board.js)
+	// use ref from renderForm below
+	// reset editing state
 	save(e) {
 		e.preventDefault()
 		this.props.onChange(this._newText.value, this.props.index)
@@ -83,7 +88,7 @@ class Note extends Component {
 			</div>
 		)
 	}
-  // this.props.children will display whatever the value of note.note is 
+  // this.props.children will display whatever the value of note.note is
 	renderDisplay() {
 		return (
 			<div className="note" style={this.style}>
