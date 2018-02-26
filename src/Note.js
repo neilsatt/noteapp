@@ -22,8 +22,8 @@ class Note extends Component {
 
 	componentWillMount() {
 		this.style = {
-			right: this.randomBetween(0, window.innerWidth - 150, 'px'),
-			top: this.randomBetween(0, window.innerHeight - 150, 'px'),
+			left: this.randomBetween(200, 800, 'px'),
+			top: this.randomBetween(100, 600, 'px'),
 			transform: `rotate(${this.randomBetween(-25, 25, 'deg')})`
 		}
 	}

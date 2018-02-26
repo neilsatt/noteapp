@@ -4,4 +4,4 @@ import './index.css'
 import Board from './Board'
 
 
-ReactDOM.render(<Board count={7}/>, document.getElementById('root'))
+ReactDOM.render(<Board count={2}/>, document.getElementById('root'))
